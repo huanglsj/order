@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的业务单_待确认</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/order.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的业务单</h1>
+			<a class="mui-icon mui-icon-phone mui-pull-right"></a>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div class="mui-control-menu">
+					<a id="menuConfirm" class="mui-menu-item mui-active">
+						待确认
+					</a>
+					<a id="menuPlay" class="mui-menu-item">
+						待支付
+					</a>
+					<a id="menuFinish" class="mui-menu-item">
+						已完成
+					</a>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="waitConfirmOrder" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-card-panel">
+									<div class="mui-panel" v-for="orderInfo in orderInfos">
+										<div class="mui-panel-header">
+											订单号：{{orderInfo.no}}
+											<span class="float-right badge">{{orderInfo.state}}</span>
+										</div>
+										<div class="mui-panel-content">
+											<div class="li">
+												<span class="name">总共费用：</span>
+												<span class="text money">￥{{orderInfo.cost}}</span>
+											</div>
+											<div class="li">
+												<span class="name">公司名称：</span>
+												<span class="text">{{orderInfo.company}}</span>
+											</div>
+											<div class="li">
+												<span class="name">手机号码：</span>
+												<span class="text">{{orderInfo.mobile}}</span>
+											</div>
+											<div class="li">
+												<span class="name">装机地址：</span>
+												<span class="text">{{orderInfo.address}}</span>
+											</div>
+											<div class="li">
+												<span class="name">业务类型：</span>
+												<span class="text">{{orderInfo.type}}</span>
+											</div>
+
+										</div>
+										<div class="mui-panel-footer clear">
+											<span class="time">{{orderInfo.time}}</span>
+											<div class="bottom-btn">
+												<button @click="cancel($index,orderInfo.no)" type="button" class="mui-btn mui-btn-danger">取消</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				 </div>	
+				</div>
+			</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/vue.min.js"></script>
+
+	<script>
+		(function($, doc) {
+            
+            var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+            
+			var back = doc.getElementById('back'),
+				menuConfirm = doc.getElementById('menuConfirm'),
+				menuPlay = doc.getElementById('menuPlay'),
+				menuFinish = doc.getElementById('menuFinish');
+			back.addEventListener('tap', function(event) {
+				$.openWindow({
+					url: 'index.html',
+					id: 'back',
+					preload: true,
+					show: {
+						aniShow: 'pop-in'
+					},
+					styles: {
+						popGesture: 'hide'
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			}, false);
+			
+			menuPlay.addEventListener('tap', function(event) {
+				$.openWindow({
+					url: 'order_play.html',
+					id: 'menuPlay',
+				});
+			}, false);
+			
+			
+			menuFinish.addEventListener('tap', function(event) {
+				$.openWindow({
+					url: 'order_finish.html',
+					id: 'menuFinish',
+				});
+			}, false);
+			
+			
+
+			$.init({
+				swipeBack:true,
+				pullRefresh: {
+					container: '#waitConfirmOrder',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						callback: pullupRefresh
+					}
+				}
+			});
+
+			/*下拉刷新*/
+			var count = 0;
+
+			function pulldownRefresh() {
+				setTimeout(function() {
+					count = 1;
+					data = {
+						page: count
+					};
+					type = 1;
+					toList(data, type);
+				}, 100);
+			}
+
+			/*上拉加载*/
+			function pullupRefresh() {
+				setTimeout(function() {
+					count++;
+					data = {
+						page: count
+					};
+					type = 2;
+					toList(data, type);
+				}, 100);
+			}
+
+			var vm = new Vue({
+				el: '#waitConfirmOrder',
+				data: {
+					orderInfos: [],
+				},
+				created: function() {},
+				methods: {
+					cancel: function(index, no) {
+						var self = this;
+						$.ajax('data.json', {
+							data: {
+								orderNo: no
+							},
+							dataType: 'json',
+							type: 'post',
+							success: function(data) {
+								self.orderInfos.splice(index, 1);
+								$.toast('成功');
+							},
+							error: function(xhr, type, errorThrown) {
+								$.toast(type);
+							}
+						});
+					},
+				}
+			});
+
+			var toList = function(data, type) {
+				$.ajax('data/data.json', {
+					data: data,
+					dataType: 'json',
+					type: 'POST',
+					timeout: 10000,
+					success: function(data) {
+						if(type == 1) {
+							vm.$set("orderInfos", data.data);
+							$('#waitConfirmOrder').pullRefresh().endPulldownToRefresh(); //结束下拉刷新
+							return;
+						}
+						if(type == 2) {
+							if(data.status == 1) {
+								$('#waitConfirmOrder').pullRefresh().endPullupToRefresh(false);
+							} else {
+								$('#waitConfirmOrder').pullRefresh().endPullupToRefresh(true);
+							}
+							vm.$set("orderInfos", vm.orderInfos.concat(data.data));
+						}
+					},
+					error: function(xhr, type, errerThrown) {
+						$.toast('网络异常,请稍候再试');
+						$('#waitConfirmOrder').pullRefresh().endPullupToRefresh(true);
+					}
+				});
+			};
+
+			if(mui.os.plus) {
+				mui.plusReady(function() {
+					setTimeout(function() {
+						mui('#waitConfirmOrder').pullRefresh().pullupLoading();
+					}, 1000);
+
+				});
+			} else {
+				mui.ready(function() {
+					mui('#waitConfirmOrder').pullRefresh().pullupLoading();
+				});
+			}
+		}(mui, document));
+	</script>
+
+</html>

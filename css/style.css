@@ -1,0 +1,373 @@
+.ui-page-login,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mui-content {
+	height: 100%;
+}
+
+.area {
+	margin: 20px auto 0px auto;
+}
+
+.mui-input-group {
+	margin-top: 10px;
+}
+
+.mui-input-group:first-child {
+	margin-top: 20px;
+}
+
+.mui-input-group label {
+	width: 22%;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 78%;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	top: 6px;
+}
+
+.mui-content-padded {
+	margin-top: 25px;
+}
+
+/*.mui-btn {
+	padding: 10px;
+}*/
+
+.link-area {
+	display: block;
+	margin-top: 25px;
+	text-align: center;
+}
+
+.spliter {
+	color: #bbb;
+	padding: 0px 8px;
+}
+
+.oauth-area {
+	position: absolute;
+	bottom: 20px;
+	left: 0px;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.oauth-area .oauth-btn {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0px 20px;
+	/*-webkit-filter: grayscale(100%); */
+	border: solid 1px #ddd;
+	border-radius: 25px;
+}
+
+.oauth-area .oauth-btn:active {
+	border: solid 1px #aaa;
+}
+
+.oauth-area .oauth-btn.disabled {
+	background-color: #ddd;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	margin-top: 1px;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+
+.apply-head .mui-icon {
+	color: #8F8F94;
+}
+
+.apply-content .apply-row .title {
+	margin: 20px 15px 7px;
+	color: #6d6d72;
+	font-size: 15px;
+}
+
+.apply-row .apply-group label{
+	width: 100px;
+	padding: 11px 0 11px 15px;
+}
+.apply-row .apply-group label~input{
+	width: 100%;
+	margin-top: 0;
+	position: absolute;
+}
+.blank{
+	margin: 0 8.5px;
+}
+.blank-16{
+	margin: 0 8px;
+}
+.blank-34{
+	margin: 0 17px;
+}
+.apply-row .apply-group .mui-input-auto{
+	height: auto;
+}
+.conceal .mui-icon{
+	padding: 6px 15px 11px;
+    float: right;
+}
+.conceal-none{
+	display: none;
+}
+.mui-input-row-numbox{
+	padding: 10px 0;
+	height: auto !important;
+}
+.mui-input-row-numbox .mui-numbox{
+	float: none;
+}
+.mui-text-big{
+	font-size: 20px;
+}
+.apply-bottom-btn{
+	margin: 10px;
+}
+.apply-bottom-btn .mui-btn{
+	padding: 8px 12px;
+}
+.apply-row .mui-checkbox-row .mui-checkbox{
+	display: inline-block;
+	width: 100px;
+    padding: 11px 0 0 15px;
+}
+.box{
+	/*新语法*/
+	display: -moz-flex; 
+	display: -o-flex; 
+	display: -webkit-flex; /*webkit*/
+    display: flex;
+	/*旧语法*/
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+}
+.bap{
+	-moz-box-align: center;
+	-webkit-box-align: center;
+	box-align: center;
+	-moz-box-pack: center;
+	-webkit-box-pack: center;
+	box-pack:center;
+}
+.ba{
+	-moz-box-align: center;
+	-webkit-box-align: center;
+	box-align: center;
+}
+.bp{
+	-moz-box-pack: center;
+	-webkit-box-pack: center;
+	box-pack:center;
+}
+.box-orient-h{
+    -moz-box-orient: horizontal; 
+    -webkit-box-orient: horizontal; 
+    box-orient: horizontal;
+}
+.box-orient-v{
+    -moz-box-orient: vertical ; 
+    -webkit-box-orient: vertical ;
+    box-orient: vertical ;
+}
+.box-item{
+    -moz-box-flex: 1; 
+    -webkit-box-flex: 1; 
+    box-flex: 1;
+}
+.absolute-con{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+.mui-btn .mui-spinner{
+	vertical-align: middle;
+}
+.user-menu li{
+	width: 50%;
+	text-align: center;
+	border-left: 1px dashed #ddd;
+	background-color: #fff;
+}
+.user-menu li:first-child{
+	border-left: 0;
+}
+.user-menu:first-child{
+	border-bottom: 1px dashed #ddd;
+}
+.user-menu li:active{
+	background-color: #F4F4F4;
+}
+.user-menu li a{
+	display:  block;	
+	width: 100%;
+}
+.user-menu li p{
+	font-size: 18px;
+}
+.user-menu li span{
+	font-size: 40px;
+}
+.user-menu li .mui-icon-extra-order{
+	color: #f0ad4e;
+}
+.user-menu li .mui-icon-compose{
+	color: #007aff;
+}
+.user-menu li .mui-icon-chat{
+	color: #f9605a;
+}
+.user-menu li .mui-icon-gear{
+	color: #8a6de9;
+}
+.mui-bar .mui-icon{
+	color: #8F8F94;
+}
+.mui-card-panel .mui-panel{
+	margin: 15px 0;
+	background-color: #fff;
+}
+.mui-panel > div{
+	padding: 10px 15px;
+	position: relative;
+}
+.mui-panel-header{
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	color: #777;
+}
+.float-right{
+	float: right;
+}
+.float-left{
+	float: left;
+}
+.mui-panel-footer{
+	border-top: 1px solid #ddd;
+}
+.mui-panel-footer .bottom-btn{
+	float: right;
+}
+.mui-panel-footer .time{
+	font-size: 14px;
+	color: #777;
+	padding-top: 6px;
+	float: left;
+}
+.mui-panel-footer .mui-btn{
+	padding: 6px 12px;
+}
+.mui-panel-content .li{
+	line-height: 30px;
+	font-size: 16px;	
+	display: table;
+}
+.mui-panel-content .li > span{
+	display: table-cell;
+}
+.mui-panel-content .li .name{
+	display: inline-block;
+	width: 80px;
+}
+.mui-panel-content .money{
+	font-size: 26px;
+	color: red;
+}
+.msg-details-body{
+	background-color: #fff;
+}
+.mui-content-msg{
+	padding: 15px 10px;
+	background-color: #fff;
+}
+.mui-content-msg .mui-msg-title{
+	margin-bottom: 6px;
+}
+.mui-content-msg .mui-msg-time{
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+.modify-btn{
+	padding: 6px 12px;
+}
+.mui-page-content .send-a{
+	margin-top: 15px;
+}
+.mui-page-content .send-a .mui-btn{
+	border-radius: 0;
+	padding: 10px;
+}
+.mui-control-menu{
+	font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    table-layout: fixed;
+    background-color: transparent;
+    border-bottom: 1px solid #c7c7c7;
+    border-radius: 0;
+    top: 44px;
+}
+.mui-control-menu .mui-menu-item {
+    line-height: 38px;
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    -webkit-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: inherit;
+    border: 0;
+}
+.mui-control-menu .mui-menu-item.mui-active {
+    color: #007aff;
+    border-bottom: 2px solid #007aff;
+    background: 0 0;
+}
+.mui-bar-nav~.mui-scroll-con{
+	padding-top: 0;
+	top: 88px;
+	padding-bottom: 88px;
+}
+.mui-bar-nav~.mui-scroll-con .mui-pull-top-pocket{
+	top: 0;
+}

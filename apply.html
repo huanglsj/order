@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>业务单申请</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/mui.picker.all.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav apply-head">
+			<a id="index" class="mui-icon mui-icon-contact"></a>
+			<h1 class="mui-title">业务单申请</h1>
+			<a id="msg" class="mui-icon mui-icon-chat mui-pull-right"></a>
+		</header>
+	<div class="mui-content apply-content">
+		<div class="apply-row">
+			<div class="title">
+				基本信息
+			</div>
+			<div class="mui-input-group apply-group">
+				<div class="mui-input-row">
+					<label>公司全称：</label>
+					<input type="text" id="company" class="mui-input-clear" placeholder="请输入公司全称">
+				</div>
+				<div class="mui-input-row">
+					<label>通讯地址：</label>
+					<input type="text" id="messageAddress" class="mui-input-clear" placeholder="请输入通讯地址">
+				</div>	
+				<div class="mui-input-row">
+					<label>装机地址：</label>
+					<input type="text" id="installAddress" class="mui-input-clear" placeholder="请输入装机地址">
+				</div>	
+				<div class="mui-input-row">
+					<label>经<span class="blank">办</span>人：</label>
+					<input type="text" id="agent" class="mui-input-clear" placeholder="请输入经办人">
+				</div>
+				<div class="mui-input-row">
+					<label>手机号码：</label>
+					<input type="number" id="mobile" class="mui-input-clear" placeholder="请输入手机号码">
+				</div>
+				<div class="mui-input-row">
+					<label>业务类型：</label>
+					<input type="text" id="type" readonly="readonly" placeholder="请选择业务类型" >
+				</div>
+			</div>
+		</div>
+		
+		<div class="apply-row">
+			<div class="title">
+				申请业务
+			</div>
+			<div class="mui-input-group apply-group">
+				<div class="mui-input-row">
+					<label>语音电话：</label>
+					<input type="number" id="voiceCall" class="mui-input-clear" placeholder="请输入号码">
+				</div>
+				<ul class="mui-table-view"> 
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right" href="#">专<span class="blank-34"></span>线：</a>
+			            <div class="mui-collapse-content">
+			                <div class="mui-input-row">
+								<input type="number" id="specialLineNo" class="mui-input-clear" placeholder="请输入专线号">
+							</div>					
+							<div class="mui-input-row">
+								<input type="number" id="specialNo" class="mui-input-clear" placeholder="请输入号码">
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="specialUse" class="mui-input-clear" placeholder="请输入用途">
+							</div>
+			            </div>
+			        </li>
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right" href="#">机场内通：</a>
+			            <div class="mui-collapse-content">
+				            <div class="mui-input-row">
+								<input type="number" id="airportNo" class="mui-input-clear" placeholder="请输入号码">
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="airportUse" class="mui-input-clear" placeholder="请输入用途">
+							</div>
+							<div class="mui-checkbox-row">
+								<div class="mui-checkbox">模拟<input class="airport-checkbox" name="checkbox" value="0" type="checkbox"></div>
+								<div class="mui-checkbox">数字<input class="airport-checkbox" name="checkbox" value="1" type="checkbox"></div>
+							</div>
+			            </div>
+			        </li>
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right" href="#">数<span class="blank-34"></span>据：</a>
+			            <div class="mui-collapse-content">
+				            <div class="mui-input-row">
+								<input type="text" id="dataUse" class="mui-input-clear" placeholder="请输入用途">
+							</div>
+							<div class="mui-input-row mui-input-row-numbox">
+								<label>芯数：</label>
+								<div class="mui-numbox" data-numbox-min="0">
+									<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+									<input id="dataNumber" class="mui-input-numbox" type="number">
+									<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+								</div>
+							</div>		
+							<div class="mui-checkbox-row">
+								<div class="mui-checkbox">光纤<input class="data-checkbox" name="checkbox" value="0" type="checkbox"></div>
+								<div class="mui-checkbox">铜缆<input class="data-checkbox" name="checkbox" value="1" type="checkbox"></div>
+								<div class="mui-checkbox">单模<input class="data-checkbox" name="checkbox" value="2" type="checkbox"></div>
+								<div class="mui-checkbox">多模<input class="data-checkbox" name="checkbox" value="3" type="checkbox"></div>
+							</div>
+			            </div>
+			        </li>
+			    </ul>								
+			</div>
+		</div>
+		
+		<div class="apply-row">
+			<div class="title">
+				费用统计
+			</div>
+			<ul class="mui-table-view">
+				 <li class="mui-table-view-cell">
+				 	<label>数<span class="blank-34"></span>量：</label>
+				 	<span class="mui-badge mui-badge-danger mui-badge-inverted">14</span>
+				 </li>
+		         <li class="mui-table-view-cell">
+		         	<label>初<span class="blank-34"></span>装：</label>
+		         	<span class="mui-badge mui-badge-danger mui-badge-inverted">￥200.0</span>
+		         </li>
+		         <li class="mui-table-view-cell">
+		         	<label>月<span class="blank-34"></span>租：</label>
+		         	<span class="mui-badge mui-badge-danger mui-badge-inverted">￥200.0</span>
+		         </li>
+		         <li class="mui-table-view-cell">
+		         	<label>租<span class="blank-34"></span>期：</label>
+		         	<span class="mui-badge mui-badge-inverted">2016.09.01~2016.11.01</span>
+		         </li>
+		         <li class="mui-table-view-cell">
+		         	<label>押<span class="blank-34"></span>金：</label>
+		         	<span class="mui-badge">无</span>
+		         </li>
+		         <li class="mui-table-view-cell">
+		         	总<span class="blank">费</span>用
+		         	<span class="mui-badge mui-badge-danger mui-badge-inverted mui-text-big">￥2000.0</span>
+		         </li>
+			</ul>
+	    </div>		
+		
+		<div class="apply-bottom-btn">
+			<button type="button" data-loading-text="提交中" class="mui-btn mui-btn-primary mui-btn-block">提交订单</button>
+		</div>
+		
+	</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.min.js"></script>
+	<script src="js/mui.button.js"></script>
+    <script>
+    (function($, doc) {
+    	  $.init({
+    			swipeBack:true //启用右滑关闭功能
+    	  });
+    	  $('.apply-bottom-btn').on('tap', '.mui-btn', function(e) {
+			    $(this).button('loading');
+		  });
+		  
+		  var center = doc.getElementById('index');
+                center.addEventListener('tap', function(event) {
+					$.openWindow({
+						url: 'index.html',
+						id: 'back',
+						preload: true,
+						show: {
+							aniShow: 'pop-in'
+						},
+						styles: {
+							popGesture: 'hide'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+			}, false);
+			
+			var msg = doc.getElementById('msg');
+                msg.addEventListener('tap', function(event) {
+					$.openWindow({
+						url: 'msg.html',
+						id: 'back',
+						preload: true,
+						show: {
+							aniShow: 'pop-in'
+						},
+						styles: {
+							popGesture: 'hide'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+			}, false);
+		  
+
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '0',
+						text: '新装'
+					}, {
+						value: '1',
+						text: '迁移'
+					}, {
+						value: '2',
+						text: '取消'
+					}, {
+						value: '3',
+						text: '其他'
+					}]);
+					var type = doc.getElementById('type');
+					type.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							type.value = items[0].text;
+							
+						});
+					}, false);
+
+    
+    	
+
+    	 
+			
+     }(mui, document));     
+    </script>
+</html>

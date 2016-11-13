@@ -1,0 +1,145 @@
+{
+  "forgetpwd.html": {
+    "href": "forgetpwd.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": [
+      "login.html"
+    ],
+    "priority": 0
+  },
+  "msg.html": {
+    "href": "msg.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": [
+      "index.html"
+    ],
+    "priority": 0
+  },
+  "order_play.html": {
+    "href": "order_play.html",
+    "resources": [
+      "dataPlay.json",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/order.css"
+    ],
+    "refer": [
+      "order_finish.html",
+      "index.html",
+      "order.html"
+    ],
+    "priority": 0
+  },
+  "order_finish.html": {
+    "href": "order_finish.html",
+    "resources": [
+      "dataFinish.json",
+      "data.json",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/order.css",
+      "data/dataFinish.json"
+    ],
+    "refer": [
+      "order_play.html",
+      "index.html",
+      "order.html"
+    ],
+    "priority": 0
+  },
+  "order.html": {
+    "href": "order.html",
+    "resources": [
+      "data.json",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/order.css",
+      "data/data.json",
+      "js/vue.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "order_finish.html",
+      "order_play.html",
+      "index.html"
+    ],
+    "priority": 0
+  },
+  "set.html": {
+    "href": "set.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/feedback.css",
+      "css/style.css",
+      "js/mui.view.js"
+    ],
+    "refer": [
+      "index.html"
+    ],
+    "priority": 0
+  },
+  "apply.html": {
+    "href": "apply.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/mui.picker.all.css",
+      "css/style.css",
+      "js/mui.picker.min.js",
+      "js/mui.button.js"
+    ],
+    "refer": [
+      "msg.html",
+      "index.html"
+    ],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/icons-extra.css",
+      "css/style.css",
+      "fonts/mui-icons-extra.ttf",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "msg.html",
+      "order.html",
+      "set.html",
+      "apply.html"
+    ],
+    "priority": 0
+  },
+  "reg.html": {
+    "href": "reg.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": [
+      "login.html"
+    ],
+    "priority": 0
+  },
+  "login.html": {
+    "href": "login.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/style.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "forgetpwd.html",
+      "index.html",
+      "reg.html"
+    ],
+    "priority": 0
+  }
+}

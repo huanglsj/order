@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>找回密码</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">找回密码</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">			
+				<div class="mui-input-row">
+					<label>邮箱</label>
+					<input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入注册邮箱">
+				</div>
+			</form>
+			<div class="mui-content-padded">
+				<button id='sendMail' class="mui-btn mui-btn-block mui-btn-primary">提交</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+
+				var backButton = doc.getElementById('back');
+				backButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'login.html',
+							id: 'back',
+							preload: true,
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);
+
+				
+				$.plusReady(function() {
+					var sendButton = doc.getElementById('sendMail');
+					var emailBox = doc.getElementById('email');
+					sendButton.addEventListener('tap', function() {
+						app.forgetPassword(emailBox.value, function(err, info) {
+							plus.nativeUI.toast(err || info);
+						});
+					}, false);
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>
